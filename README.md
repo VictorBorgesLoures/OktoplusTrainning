@@ -1,1 +1,1 @@
-# progCompetitive
+# OktoplusTrainning
