@@ -1,0 +1,7 @@
+Neste problema a ideia chave é diferenciar as questões em que apenas um dos robos acertam, 
+pois é neste caso em que o valor da questão faz diferença. Ainda vale ressaltar que quando o robo "BionicSolver Industries" acerta sozinho
+o valor de seu acerto deve ser mínimo para minimizar a diferença, ou seja 1.
+Conseguindo salvar a quantidade de questões que cada robo acertou sozinho consegue-se descobrir
+que se o robo "Robo-Coder Inc." não possui nenhum acerto único então é impossível de faze-lo ganhar. Caso contrário
+basta dividir a quantidade de acertos do robo "BionicSolver Industries" pelo "Robo-Coder Inc." que saberemos
+o valor exato de cada questão para empatar, logo, adicionamos +1 para que o robo "Robo-Coder Inc." seja o vencedor.

@@ -2,23 +2,45 @@
 
 using namespace std;
 
-int main(){
-    int N; cin >> N;
-    vector<int> tres;
-    int maxDays = 0,v;
-    for (int i = 0; i < N; i++)
+int main() {
+    int Q; cin >> Q;
+    for (int T = 0; T < Q; T++)
     {
-        cin >> v;
-        tres.push_back(v);
-    }
-    sort(tres.begin(), tres.end());
-    for (int i = 1; i < N+1; i++)
-    {
-        maxDays = max(tres[N-i]+i, maxDays);
-    }
-    
-    cout << maxDays+1 << endl;
-    
+        int L, C; cin >> L >> C;
+        int P[L+C-1] = {0};
+        int S[L+C-1] = {0};
+        int m[L][C];
+        for (int i = 0; i < L; i++)
+        {
+            for (int j = 0; j < C; j++)
+            {
+                cin >> m[i][j];
+                if(j-i >= 0)
+                    P[j-i] += m[i][j];
+                else 
+                    P[C-1 + abs(j-i)] += m[i][j];
 
+                S[i+j] += m[i][j];
+            }  
+        } 
+        int bigger = 0;
+        for (int i = 0; i < L; i++)
+        {
+            for (int j = 0; j < C; j++)
+            {
+                int res = 0;
+                res += S[i+j];
+                res -= m[i][j];
+                if(j-i >= 0)
+                    res += P[j-i];
+                else
+                    res += P[C-1 + abs(j-i)];
+
+                bigger = max(bigger, res);
+            }
+        }
+        cout << bigger << '\n';          
+    }
+    
     return 0;
 }
