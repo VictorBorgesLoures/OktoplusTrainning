@@ -31,8 +31,27 @@ int main() {
             pos--;
         cout << pos << '\n';
         
-    }
-    
+    }   
 
     return 0;
 }
+
+/*
+LOWER_BOUND
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int N; cin >> N;
+    int qtd, number, v[N]; cin >> qtd;
+    for (int i = 0; i < N; i++)
+        cin >> v[i];
+    for (int i = 0; i < qtd; i++)
+    {
+        cin >> number;
+        auto pos = lower_bound(v, v+N, number);      
+        cout << ((*pos != number || pos == v+N) ? -1 : pos-v)<< '\n';
+    }    
+
+    return 0;
+}
+*/
